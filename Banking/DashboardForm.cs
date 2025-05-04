@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Banking
 {
-    public partial class PinForm : Form
+    public partial class DashboardForm : Form
     {
-        public PinForm()
+        public DashboardForm()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

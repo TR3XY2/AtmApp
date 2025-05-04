@@ -31,6 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnContinue = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,11 +64,43 @@
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(103, 112);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 24);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Enter PIN-code";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(129, 151);
+            this.textBox1.MaxLength = 4;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(91, 20);
+            this.textBox1.TabIndex = 7;
+            // 
+            // btnContinue
+            // 
+            this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnContinue.Location = new System.Drawing.Point(122, 193);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.Size = new System.Drawing.Size(100, 30);
+            this.btnContinue.TabIndex = 10;
+            this.btnContinue.Text = "Continue";
+            this.btnContinue.UseVisualStyleBackColor = true;
+            // 
             // PinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 450);
+            this.Controls.Add(this.btnContinue);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -81,5 +116,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnContinue;
     }
 }
