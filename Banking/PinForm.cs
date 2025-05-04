@@ -21,5 +21,18 @@ namespace Banking
         {
 
         }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            DashboardForm dashboardForm = new DashboardForm();
+
+            dashboardForm.StartPosition = FormStartPosition.Manual;
+            dashboardForm.Location = this.Location;
+            dashboardForm.Size = this.Size;
+
+            dashboardForm.Show();
+
+            this.Hide();
+        }
     }
 }

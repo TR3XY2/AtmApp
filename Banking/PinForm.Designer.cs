@@ -92,6 +92,7 @@
             this.btnContinue.TabIndex = 10;
             this.btnContinue.Text = "Continue";
             this.btnContinue.UseVisualStyleBackColor = true;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // PinForm
             // 
@@ -104,6 +105,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PinForm";
             this.Text = "PinForm";
             this.ResumeLayout(false);
