@@ -115,6 +115,7 @@
             this.textBox3.TabIndex = 8;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.UseSystemPasswordChar = true;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // btnContinue
             // 
@@ -135,6 +136,7 @@
             this.textBox4.Size = new System.Drawing.Size(44, 20);
             this.textBox4.TabIndex = 10;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label5
             // 
