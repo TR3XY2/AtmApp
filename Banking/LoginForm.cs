@@ -78,9 +78,16 @@ namespace Banking
 
                 foreach (Card card in bank.Cards)
                 {
-                    if (card.CardNumber == cardNumber && card.Expiry == expiry && card.CVV == cvv)
+                    if (card.CardNumber == cardNumber && card.Expiry == expiry)
                     {
-                        // Зберігаємо в глобальну змінну (наприклад, Session.CurrentCard)
+                        if (card.CVV != cvv)
+                        {
+                            string cardEnding = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
+                            Logger.Log($"User entered wrong CVV code for {cardEnding};.");
+                            MessageBox.Show("Неправильний CVV код.");
+                        }
+
+                        // Зберігаємо в глобальну змінну
                         Session.CurrentCard = card;
                         Session.CurrentBank = bank;
 

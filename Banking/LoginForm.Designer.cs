@@ -53,7 +53,6 @@
             this.label1.Size = new System.Drawing.Size(95, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Language";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -64,7 +63,6 @@
             this.label2.Size = new System.Drawing.Size(124, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Card Number";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -75,7 +73,6 @@
             this.label3.Size = new System.Drawing.Size(135, 24);
             this.label3.TabIndex = 4;
             this.label3.Text = "Expiration date";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -94,7 +91,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(104, 20);
             this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -104,7 +100,6 @@
             this.textBox2.Size = new System.Drawing.Size(44, 20);
             this.textBox2.TabIndex = 7;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -115,7 +110,6 @@
             this.textBox3.TabIndex = 8;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.UseSystemPasswordChar = true;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // btnContinue
             // 
@@ -136,7 +130,6 @@
             this.textBox4.Size = new System.Drawing.Size(44, 20);
             this.textBox4.TabIndex = 10;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label5
             // 
@@ -157,7 +150,6 @@
             this.button2.Size = new System.Drawing.Size(70, 35);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -167,7 +159,6 @@
             this.button1.Size = new System.Drawing.Size(70, 35);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // contextMenuStrip1
             // 

@@ -41,6 +41,8 @@ namespace Banking
 
             if (enteredPin != Session.CurrentCard.PIN)
             {
+                string cardEnd = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
+                Logger.Log($"User entered wrong PIN for card ending with {cardEnd};");
                 MessageBox.Show("Неправильний PIN код.");
                 return;
             }
@@ -52,6 +54,8 @@ namespace Banking
                 Size = this.Size
             };
 
+            string cardEnding = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
+            Logger.Log($"User successfully logged in for card ending with {cardEnding};.");
             dashboardForm.Show();
             this.Hide();
         }
