@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Banking.Banking;
+using Banking.Properties;
 
 namespace Banking
 {
@@ -42,19 +43,19 @@ namespace Banking
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("Будь ласка, введіть суму для зняття.");
+                MessageBox.Show(Resources.MsgWithdrawSum);
                 return;
             }
 
             if (!decimal.TryParse(textBox1.Text, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.InvariantCulture, out decimal amount))
             {
-                MessageBox.Show("Введено некоректне число. Будь ласка, введіть лише цифри.");
+                MessageBox.Show(Resources.MsgIncorrectNumber);
                 return;
             }
 
             if (amount <= 0)
             {
-                MessageBox.Show("Сума має бути більшою за нуль.");
+                MessageBox.Show(Resources.MsgSum);
                 return;
             }
 
@@ -65,7 +66,7 @@ namespace Banking
             // Перевірка балансу з урахуванням комісії
             if (totalAmount > Session.CurrentCard.Balance)
             {
-                MessageBox.Show($"Недостатньо коштів на рахунку. З комісією потрібно {totalAmount:F2} UAH.");
+                MessageBox.Show(Resources.MsgNotEnough + $"{totalAmount:F2} " + Resources.MoneySymbol);
                 return;
             }
 
@@ -76,7 +77,9 @@ namespace Banking
 
             string cardEnding = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
             Logger.Log($"User successfully withdrew {amount:F2} UAH from card ending with {cardEnding};.");
-            MessageBox.Show($"Успішно знято {amount:F2} UAH.\nКомісія: {commission:F2} UAH.\nРазом списано: {totalAmount:F2} UAH.");
+            MessageBox.Show(Resources.MsgSuccesfullWithdrawal + $"{amount:F2}" + Resources.MoneySymbol + "." + Environment.NewLine + 
+                Resources.MsgCommission + $"{commission:F2}" + Resources.MoneySymbol + ".\n" +
+                 Resources.MsgTotal + $"{totalAmount:F2}" + Resources.MoneySymbol + ".");
             PrintReceipt(previousBalance, totalAmount, "Withdraw");
         }
 
@@ -91,7 +94,7 @@ namespace Banking
 
             if (!File.Exists(filePath))
             {
-                MessageBox.Show("Файл банку не знайдено.");
+                MessageBox.Show(Resources.MsgBankNotFound);
                 return;
             }
 
@@ -107,15 +110,18 @@ namespace Banking
             }
             else
             {
-                MessageBox.Show("Картку не знайдено в банку.");
+                MessageBox.Show(Resources.MsgCardNotFound);
             }
         }
 
         private void PrintReceipt(decimal previousBalance, decimal transactionAmount, string transactionType)
         {
-            DialogResult result = MessageBox.Show("Бажаєте зберегти чек у файл?", "Збереження чеку", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(Resources.MsgSaveReceipt, Resources.MsgSaveReceiptCaption, MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                string cardEnding = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
+                Logger.Log($"User saved receipt for card ending with {cardEnding};");
+
                 var receipt = new
                 {
                     TransactionType = transactionType,
@@ -136,7 +142,7 @@ namespace Banking
                 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
 
                 File.WriteAllText(filePath, json);
-                MessageBox.Show($"Чек збережено у: {filePath}");
+                MessageBox.Show(Resources.MsgReceiptSaved + filePath);
             }
         }
 

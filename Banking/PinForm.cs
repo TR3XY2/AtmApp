@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banking.Banking;
+using Banking.Properties;
 
 namespace Banking
 {
@@ -31,13 +32,13 @@ namespace Banking
 
             if (string.IsNullOrEmpty(enteredPin))
             {
-                MessageBox.Show("Введіть PIN код.");
+                MessageBox.Show(Resources.MsgEnterPIN);
                 return;
             }
 
             if (Session.CurrentCard == null)
             {
-                MessageBox.Show("Спочатку потрібно ввести дані картки.");
+                MessageBox.Show(Resources.MsgCardNull);
                 return;
             }
 
@@ -45,7 +46,7 @@ namespace Banking
             {
                 string cardEnd = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
                 Logger.Log($"User entered wrong PIN for card ending with {cardEnd};");
-                MessageBox.Show("Неправильний PIN код.");
+                MessageBox.Show(Resources.MsgWrongPIN);
                 return;
             }
 
@@ -57,7 +58,7 @@ namespace Banking
             };
 
             string cardEnding = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
-            Logger.Log($"User successfully logged in for card ending with {cardEnding};.");
+            Logger.Log($"User successfully entered pin for card ending with {cardEnding};.");
             dashboardForm.Show();
             this.Hide();
         }
@@ -81,6 +82,11 @@ namespace Banking
 
             this.Controls.Clear();
             InitializeComponent();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

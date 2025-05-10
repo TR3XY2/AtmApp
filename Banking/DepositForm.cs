@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using Banking.Banking;
+using Banking.Properties;
 
 namespace Banking
 {
@@ -49,33 +50,31 @@ namespace Banking
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("Будь ласка, введіть суму для поповнення.");
+                MessageBox.Show(Resources.MsgDepositEmpty);
                 return;
             }
 
-            // Дозволяємо крапку або кому  
             string input = textBox1.Text.Replace('.', ',');
 
             if (!decimal.TryParse(input, out decimal amount))
             {
-                MessageBox.Show("Введено некоректне число. Будь ласка, введіть лише цифри.");
+                MessageBox.Show(Resources.MsgIncorrectNumber);
                 return;
             }
 
             if (amount <= 0)
             {
-                MessageBox.Show("Сума має бути більшою за нуль.");
+                MessageBox.Show(Resources.MsgSum);
                 return;
             }
 
-            // Додаємо кошти  
             var previousBalance = Session.CurrentCard.Balance;
             Session.CurrentCard.Balance += amount;
             UpdateXmlBalance(Session.CurrentBank.Name, Session.CurrentCard.CardNumber, Session.CurrentCard.Balance);
 
             string cardEnding = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
             Logger.Log($"User successfully deposited {amount:F2} UAH to card ending with {cardEnding};.");
-            MessageBox.Show($"Успішно поповнено на {amount:F2} UAH.");
+            MessageBox.Show(Resources.MsgSuccesfullDeposit + $"{amount:F2}" + Resources.MoneySymbol);
             PrintReceipt(previousBalance, Session.CurrentCard.Balance - previousBalance, "Deposit");
         }
 
@@ -85,7 +84,7 @@ namespace Banking
 
             if (!File.Exists(filePath))
             {
-                MessageBox.Show("Файл банку не знайдено.");
+                MessageBox.Show(Resources.MsgBankNotFound);
                 return;
             }
 
@@ -101,15 +100,17 @@ namespace Banking
             }
             else
             {
-                MessageBox.Show("Картку не знайдено в банку.");
+                MessageBox.Show(Resources.MsgCardNotFound);
             }
         }
 
         private void PrintReceipt(decimal previousBalance, decimal transactionAmount, string transactionType)
         {
-            DialogResult result = MessageBox.Show("Бажаєте зберегти чек у файл?", "Збереження чеку", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(Resources.MsgSaveReceipt, Resources.MsgSaveReceiptCaption, MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                string cardEnding = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
+                Logger.Log($"User saved receipt for card ending with {cardEnding};");
                 var receipt = new
                 {
                     TransactionType = transactionType,
@@ -130,7 +131,7 @@ namespace Banking
                 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
 
                 File.WriteAllText(filePath, json);
-                MessageBox.Show($"Чек збережено у: {filePath}");
+                MessageBox.Show(Resources.MsgReceiptSaved + filePath);
             }
         }
 

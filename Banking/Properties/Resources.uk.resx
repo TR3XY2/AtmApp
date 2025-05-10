@@ -123,4 +123,64 @@
   <data name="MsgCardNumShort" xml:space="preserve">
     <value>Номер карти повинен містити 16 цифр.</value>
   </data>
+  <data name="MsgWrongCVV" xml:space="preserve">
+    <value>Неправильний CVV код.</value>
+  </data>
+  <data name="MsgWrongInput" xml:space="preserve">
+    <value>Картку не знайдено або дані некоректні.</value>
+  </data>
+  <data name="MsgWrongPIN" xml:space="preserve">
+    <value>Неправильний PIN код.</value>
+  </data>
+  <data name="MsgCardNull" xml:space="preserve">
+    <value>Спочатку потрібно ввести дані картки.</value>
+  </data>
+  <data name="MsgEnterPIN" xml:space="preserve">
+    <value>Введіть PIN код.</value>
+  </data>
+  <data name="MsgSaveReceipt" xml:space="preserve">
+    <value>Бажаєте зберегти чек у файл?</value>
+  </data>
+  <data name="MsgSaveReceiptCaption" xml:space="preserve">
+    <value>Збереження чеку</value>
+  </data>
+  <data name="MsgReceiptSaved" xml:space="preserve">
+    <value>Чек збережено у:  </value>
+  </data>
+  <data name="MsgBankNotFound" xml:space="preserve">
+    <value>Файл банку не знайдено.</value>
+  </data>
+  <data name="MsgCardNotFound" xml:space="preserve">
+    <value>Картку не знайдено в банку.</value>
+  </data>
+  <data name="MsgSum" xml:space="preserve">
+    <value>Сума має бути більшою за нуль.</value>
+  </data>
+  <data name="MsgIncorrectNumber" xml:space="preserve">
+    <value>Введено некоректне число. Будь ласка, введіть лише цифри.</value>
+  </data>
+  <data name="MsgDepositEmpty" xml:space="preserve">
+    <value>Будь ласка, введіть суму для поповнення.</value>
+  </data>
+  <data name="MsgSuccesfullDeposit" xml:space="preserve">
+    <value>Успішно поповнено на </value>
+  </data>
+  <data name="MoneySymbol" xml:space="preserve">
+    <value>ГРН</value>
+  </data>
+  <data name="MsgWithdrawSum" xml:space="preserve">
+    <value>Введіть суму для зняття.</value>
+  </data>
+  <data name="MsgNotEnough" xml:space="preserve">
+    <value>Недостатньо коштів на рахунку. З комісією потрібно </value>
+  </data>
+  <data name="MsgSuccesfullWithdrawal" xml:space="preserve">
+    <value>Успішно знято </value>
+  </data>
+  <data name="MsgCommission" xml:space="preserve">
+    <value>Комісія:</value>
+  </data>
+  <data name="MsgTotal" xml:space="preserve">
+    <value>Разом списано: </value>
+  </data>
 </root>

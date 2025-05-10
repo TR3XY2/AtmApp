@@ -136,4 +136,64 @@
   <data name="MsgCardNumShort" xml:space="preserve">
     <value>The card number must contain 16 digits.</value>
   </data>
+  <data name="MsgWrongCVV" xml:space="preserve">
+    <value>Wrong CVV code.</value>
+  </data>
+  <data name="MsgWrongInput" xml:space="preserve">
+    <value>Card is not found or input is incorrect.</value>
+  </data>
+  <data name="MsgWrongPIN" xml:space="preserve">
+    <value>Wrong PIN code.</value>
+  </data>
+  <data name="MsgCardNull" xml:space="preserve">
+    <value>Enter card data first.</value>
+  </data>
+  <data name="MsgEnterPIN" xml:space="preserve">
+    <value>Enter PIN code.</value>
+  </data>
+  <data name="MsgSaveReceipt" xml:space="preserve">
+    <value>Wish to save receipt in file?</value>
+  </data>
+  <data name="MsgSaveReceiptCaption" xml:space="preserve">
+    <value>Saving a receipt</value>
+  </data>
+  <data name="MsgReceiptSaved" xml:space="preserve">
+    <value>Receipt saved to:  </value>
+  </data>
+  <data name="MsgBankNotFound" xml:space="preserve">
+    <value>Bank file not found.</value>
+  </data>
+  <data name="MsgCardNotFound" xml:space="preserve">
+    <value>Card not found in bank.</value>
+  </data>
+  <data name="MsgSum" xml:space="preserve">
+    <value>Sum must be greater than 0.</value>
+  </data>
+  <data name="MsgIncorrectNumber" xml:space="preserve">
+    <value>Invalid number entered. Please enter only numbers.</value>
+  </data>
+  <data name="MsgDepositEmpty" xml:space="preserve">
+    <value>Enter deposit sum.</value>
+  </data>
+  <data name="MsgSuccesfullDeposit" xml:space="preserve">
+    <value>Succesfully deposited </value>
+  </data>
+  <data name="MoneySymbol" xml:space="preserve">
+    <value>UAH</value>
+  </data>
+  <data name="MsgWithdrawSum" xml:space="preserve">
+    <value>Enter withdraw sum</value>
+  </data>
+  <data name="MsgNotEnough" xml:space="preserve">
+    <value>There are not enough funds in the account. With the commission you need </value>
+  </data>
+  <data name="MsgSuccesfullWithdrawal" xml:space="preserve">
+    <value>Succesfully withdrew </value>
+  </data>
+  <data name="MsgCommission" xml:space="preserve">
+    <value>Commission:</value>
+  </data>
+  <data name="MsgTotal" xml:space="preserve">
+    <value>Total withdrawn: </value>
+  </data>
 </root>

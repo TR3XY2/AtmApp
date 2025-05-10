@@ -81,6 +81,42 @@ namespace Banking.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to UAH.
+        /// </summary>
+        internal static string MoneySymbol {
+            get {
+                return ResourceManager.GetString("MoneySymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank file not found..
+        /// </summary>
+        internal static string MsgBankNotFound {
+            get {
+                return ResourceManager.GetString("MsgBankNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card not found in bank..
+        /// </summary>
+        internal static string MsgCardNotFound {
+            get {
+                return ResourceManager.GetString("MsgCardNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter card data first..
+        /// </summary>
+        internal static string MsgCardNull {
+            get {
+                return ResourceManager.GetString("MsgCardNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The card number must contain 16 digits..
         /// </summary>
         internal static string MsgCardNumShort {
@@ -90,11 +126,155 @@ namespace Banking.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Commission:.
+        /// </summary>
+        internal static string MsgCommission {
+            get {
+                return ResourceManager.GetString("MsgCommission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter deposit sum..
+        /// </summary>
+        internal static string MsgDepositEmpty {
+            get {
+                return ResourceManager.GetString("MsgDepositEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter PIN code..
+        /// </summary>
+        internal static string MsgEnterPIN {
+            get {
+                return ResourceManager.GetString("MsgEnterPIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fill in all fields..
         /// </summary>
         internal static string MsgFillAll {
             get {
                 return ResourceManager.GetString("MsgFillAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid number entered. Please enter only numbers..
+        /// </summary>
+        internal static string MsgIncorrectNumber {
+            get {
+                return ResourceManager.GetString("MsgIncorrectNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are not enough funds in the account. With the commission you need .
+        /// </summary>
+        internal static string MsgNotEnough {
+            get {
+                return ResourceManager.GetString("MsgNotEnough", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receipt saved to:  .
+        /// </summary>
+        internal static string MsgReceiptSaved {
+            get {
+                return ResourceManager.GetString("MsgReceiptSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wish to save receipt in file?.
+        /// </summary>
+        internal static string MsgSaveReceipt {
+            get {
+                return ResourceManager.GetString("MsgSaveReceipt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saving a receipt.
+        /// </summary>
+        internal static string MsgSaveReceiptCaption {
+            get {
+                return ResourceManager.GetString("MsgSaveReceiptCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Succesfully deposited .
+        /// </summary>
+        internal static string MsgSuccesfullDeposit {
+            get {
+                return ResourceManager.GetString("MsgSuccesfullDeposit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Succesfully withdrew .
+        /// </summary>
+        internal static string MsgSuccesfullWithdrawal {
+            get {
+                return ResourceManager.GetString("MsgSuccesfullWithdrawal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sum must be greater than 0..
+        /// </summary>
+        internal static string MsgSum {
+            get {
+                return ResourceManager.GetString("MsgSum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total withdrawn: .
+        /// </summary>
+        internal static string MsgTotal {
+            get {
+                return ResourceManager.GetString("MsgTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter withdraw sum.
+        /// </summary>
+        internal static string MsgWithdrawSum {
+            get {
+                return ResourceManager.GetString("MsgWithdrawSum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong CVV code..
+        /// </summary>
+        internal static string MsgWrongCVV {
+            get {
+                return ResourceManager.GetString("MsgWrongCVV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card is not found or input is incorrect..
+        /// </summary>
+        internal static string MsgWrongInput {
+            get {
+                return ResourceManager.GetString("MsgWrongInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong PIN code..
+        /// </summary>
+        internal static string MsgWrongPIN {
+            get {
+                return ResourceManager.GetString("MsgWrongPIN", resourceCulture);
             }
         }
         

@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banking.Banking;
+using Banking.Properties;
 
 namespace Banking
 {
@@ -18,7 +19,7 @@ namespace Banking
         public BalanceForm()
         {
             InitializeComponent();
-            label3.Text = Math.Round(Session.CurrentCard.Balance, 2).ToString() + " UAH";
+            label3.Text = Math.Round(Session.CurrentCard.Balance, 2).ToString() + " " + Resources.MoneySymbol;
             string cardEnding = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
             Logger.Log($"User viewed balance on card ending with {cardEnding};.");
         }

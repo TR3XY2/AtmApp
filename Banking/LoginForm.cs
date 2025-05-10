@@ -23,36 +23,6 @@ namespace Banking
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             string cardNumber = textBox1.Text.Trim();
@@ -85,16 +55,18 @@ namespace Banking
                     {
                         if (card.CVV != cvv)
                         {
-                            string cardEnding = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
-                            Logger.Log($"User entered wrong CVV code for {cardEnding};.");
-                            MessageBox.Show("Неправильний CVV код.");
+                            string currCardeEnd = cardNumber.Substring(cardNumber.Length - 4);
+                            Logger.Log($"User entered wrong CVV code for {currCardeEnd};.");
+                            MessageBox.Show(Resources.MsgWrongCVV);
                         }
 
                         // Зберігаємо в глобальну змінну
                         Session.CurrentCard = card;
                         Session.CurrentBank = bank;
 
-                        // Переходимо на PIN форму
+                        string cardEnding = Session.CurrentCard.CardNumber.Substring(Session.CurrentCard.CardNumber.Length - 4);
+                Logger.Log($"User succesfully entered data for card ending with {cardEnding};");
+                        // Переходимо на PIN формуc
                         PinForm pinForm = new PinForm();
 
 
@@ -102,6 +74,7 @@ namespace Banking
                         pinForm.Location = this.Location;
                         pinForm.Size = this.Size;
 
+                        pinForm.FormClosed += (s, args) => this.Show();
                         pinForm.Show();
                         this.Hide();
                         return;
@@ -109,25 +82,10 @@ namespace Banking
                 }
             }
 
-            MessageBox.Show("Картку не знайдено або дані некоректні.");
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            MessageBox.Show(Resources.MsgWrongInput);
         }
 
         private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }
