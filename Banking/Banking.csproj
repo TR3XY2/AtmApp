@@ -125,16 +125,32 @@
     <EmbeddedResource Include="BalanceForm.resx">
       <DependentUpon>BalanceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BalanceForm.uk.resx">
+      <DependentUpon>BalanceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardForm.uk.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DepositForm.resx">
       <DependentUpon>DepositForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DepositForm.uk.resx">
+      <DependentUpon>DepositForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.uk.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="PinForm.resx">
+      <DependentUpon>PinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PinForm.uk.resx">
       <DependentUpon>PinForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -147,7 +163,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.uk.resx" />
     <EmbeddedResource Include="WithdrawForm.resx">
+      <DependentUpon>WithdrawForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WithdrawForm.uk.resx">
       <DependentUpon>WithdrawForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

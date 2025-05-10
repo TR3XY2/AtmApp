@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -130,6 +132,22 @@ namespace Banking
                 File.WriteAllText(filePath, json);
                 MessageBox.Show($"Чек збережено у: {filePath}");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
+
+            this.Controls.Clear();
+            InitializeComponent();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("uk");
+
+            this.Controls.Clear();
+            InitializeComponent();
         }
     }
 }

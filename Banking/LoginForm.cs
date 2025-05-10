@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banking.Banking;
+using Banking.Properties;
 using static System.Collections.Specialized.BitVector32;
 
 namespace Banking
@@ -58,13 +61,13 @@ namespace Banking
 
             if (string.IsNullOrEmpty(cardNumber) || string.IsNullOrEmpty(expiry) || string.IsNullOrEmpty(cvv))
             {
-                MessageBox.Show("Будь ласка, заповніть усі поля.");
+                MessageBox.Show(Resources.MsgFillAll);
                 return;
             }
 
             if (cardNumber.Length != 16 )
             {
-                MessageBox.Show("Номер карти повинен містити 16 цифр.");
+                MessageBox.Show(Resources.MsgCardNumShort);
                 return;
             }
 
@@ -93,6 +96,7 @@ namespace Banking
 
                         // Переходимо на PIN форму
                         PinForm pinForm = new PinForm();
+
 
                         pinForm.StartPosition = FormStartPosition.Manual;
                         pinForm.Location = this.Location;
@@ -126,6 +130,22 @@ namespace Banking
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
+
+            this.Controls.Clear();
+            InitializeComponent();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("uk");
+
+            this.Controls.Clear();
+            InitializeComponent();
         }
     }
 }

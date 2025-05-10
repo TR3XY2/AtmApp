@@ -81,6 +81,24 @@ namespace Banking.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The card number must contain 16 digits..
+        /// </summary>
+        internal static string MsgCardNumShort {
+            get {
+                return ResourceManager.GetString("MsgCardNumShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill in all fields..
+        /// </summary>
+        internal static string MsgFillAll {
+            get {
+                return ResourceManager.GetString("MsgFillAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ua {
