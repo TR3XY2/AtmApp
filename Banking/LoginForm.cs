@@ -58,6 +58,7 @@ namespace Banking
                             string currCardeEnd = cardNumber.Substring(cardNumber.Length - 4);
                             Logger.Log($"User entered wrong CVV code for {currCardeEnd};.");
                             MessageBox.Show(Resources.MsgWrongCVV);
+                            return;
                         }
 
                         // Зберігаємо в глобальну змінну
